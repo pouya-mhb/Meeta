@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<h1>All Meetings</h1>
+{% for meeting in meetings %}
+
+{{ meeting.host}}
+{{ meeting.attendance}}
+{{ meeting.subject}}
+{{ meeting.status}}
+{{ meeting.date_time}}
+
+<br>
+{% endfor %}
+{% endblock %}
