@@ -8,21 +8,21 @@ from django.core.paginator import Paginator
 @admin.register(Meeting)
 class MeetingAdmin(admin.ModelAdmin):
     list_display = [
-        'host', 'subject', 'status', 'date_time'
+        'host', 'subject', 'status', 'date', 'time_start', 'time_end'
     ]
 
     list_filter = [
-        'host', 'subject', 'status', 'date_time'
+        'host', 'subject', 'status', 'date', 'time_start', 'time_end'
     ]
 
     search_fields = [
-        'host', 'subject', 'status', 'date_time'
+        'host', 'subject', 'status', 'date', 'time_start', 'time_end'
     ]
 
     raw_id_fields = ('host',)
 
-    date_hierarchy = 'date_time'
+    date_hierarchy = 'date'
 
     ordering = (
-        'host', 'subject', 'date_time'
+        'host', 'subject', 'date', 'time_start', 'time_end'
     )
