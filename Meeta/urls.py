@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mvp.views import meetings
+from mvp.views import user_login,user_logout,meetings,new_meeting,register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', admin.site.urls),
-    path('login/', admin.site.urls),
-    path('new-meeting/', admin.site.urls),
+    path('register/', register),
+    path('login/', user_login),
+    path('logout/', user_logout)
+    path('new-meeting/',new_meeting),
     path('', meetings, name='meetings'),
 
 ]
